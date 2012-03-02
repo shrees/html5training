@@ -45,7 +45,7 @@ window.addEventListener('load', function(){
         document.getElementById("seq").innerHTML="";
         
         // TODO 3: Send the num variable as a message to the worker (one line)
-        fib_worker.PostMesssage(num);
+        fib_worker.postMesssage(num);
         
     };
 
