@@ -27,7 +27,7 @@ function successCallback(pos) {
     var marker = new google.maps.Marker({
         position: myLatlng, 
         map: map, 
-        title:"Accuracy of " + 100000 + " meters"
+        title:"Accuracy of " + pos.coords.accuracy + " meters"
     });
 }
 
