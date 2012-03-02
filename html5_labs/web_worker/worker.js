@@ -15,11 +15,13 @@ function show(n) {
   for(i = 0; i <= n; i++) {
     // TODO 4: Send the number from the suite to the main window (one line)
     // The message to send is: fibonacci(i)
+    self.postMessage(fibonacci(i));
     
   }
 }
 
 self.onmessage=function(event){
   // TODO 5: Use the show method defined above and pass the message sent from the main window as a parameter (one line)
+  show(event.data);
   
 };
