@@ -29,12 +29,13 @@ window.addEventListener('load', function(){
     },true);
 
     // TODO 1: Create a new Worker called fib_worker using the worker file named worker.js (one line)
+    var fib_worker = new Worker('worker.js');
     
 
     fib_worker.onmessage=function(event){
         // TODO 2: This callback is executed when we get a message from the worker
         // Display the message from the worker. Replace xxxxxx by the actual message from the worker
-        document.getElementById('seq').innerHTML += xxxxxx;
+        document.getElementById('seq').innerHTML += event.data;
         
         document.getElementById('seq').innerHTML += " ";
     };
@@ -44,6 +45,7 @@ window.addEventListener('load', function(){
         document.getElementById("seq").innerHTML="";
         
         // TODO 3: Send the num variable as a message to the worker (one line)
+        fib_worker.PostMesssage(num);
         
     };
 
